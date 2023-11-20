@@ -1,0 +1,7 @@
+langchain
+google-api-python-client
+google-search-results
+requests
+wikipedia
+beautifulsoup4
+textwrap
