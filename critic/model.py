@@ -10,8 +10,13 @@ class Critic:
         self.model_name = model_name
         self.temperature = temperature
         self.verbose = verbose
+        self.empirical_bias = "EMPIRICAL CERTAINTY and BREADTH OF SEARCH"
+        self.efficiency_bias = "CRITICAL PATH and EFFICIENCY"
 
-    def score(self, objective, candidate_task_lists):
+    def score(self, objective, candidate_task_lists, mode = "empirical"):
         scorer_model = ChatOpenAI(temperature=0.9,model_name=self.model_name, openai_api_key=self.openai_api_key)
         chain = LLMChain(llm=scorer_model, prompt=get_prompt(), verbose=self.verbose)
-        return ast.literal_eval(chain.run(objective=objective, candidate_task_lists = candidate_task_lists))
+        selected_bias = self.empirical_bias 
+        if mode == "efficiency":
+            selected_bias = self.efficiency_bias
+        return ast.literal_eval(chain.run(objective=objective, candidate_task_lists = candidate_task_lists, bias = selected_bias))

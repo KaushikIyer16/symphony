@@ -19,7 +19,7 @@ conductor = Conductor(openai_api_key="sk-sDAoQct5lwjH5oJ1pGOKT3BlbkFJmdBXSquuI2K
 metronome = Metronome(openai_api_key="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")
 dynamic_objectives, dynamic_task_lists, dynamic_examples = get_examples(objective,mode="dynamic",top_k=2)
 
-final_task_list = metronome.start(objective,dynamic_examples)
+final_task_list = metronome.start(objective,dynamic_examples,mode="empirical")
 
 print(final_task_list)
 #print("dynamic = ", len(dynamic_task_lists))

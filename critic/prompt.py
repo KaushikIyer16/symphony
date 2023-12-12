@@ -7,7 +7,7 @@ def get_prompt():
   return PromptTemplate(
     template = """ 
 
-You are an expert critic in a distinguished scoring panel. You will be given a tool list, an objective, and three candidate task lists. All three task lists are capable of achieving the objective. Your role is to critically assess them against each other based on their critical path and efficiency, providing in-depth and elaborate commentary.
+You are an expert critic in a distinguished scoring panel. You will be given a tool list, an objective, and three candidate task lists. All three task lists are capable of achieving the objective. Your role is to critically assess them against each other based on their [{bias}] , providing in-depth and elaborate commentary.
 
 Your assessment should be communicated [ALWAYS] in this JSON format:
 
@@ -54,4 +54,4 @@ Objective: {objective}
 
 {candidate_task_lists}
 
-Assessment: """,input_variables = ["objective","candidate_task_lists"] )
+Assessment: """,input_variables = ["objective","candidate_task_lists","bias"] )

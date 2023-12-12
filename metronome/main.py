@@ -21,17 +21,17 @@ class Metronome:
         return reformatted_task_lists
 
 
-    def setTempo(self, objective, candidate_task_lists):
+    def setTempo(self, objective, candidate_task_lists,mode="empirical"):
         reformatted_task_lists = self.reformat_task_lists(candidate_task_lists)
         critic = Critic(openai_api_key=self.openai_api_key)
-        assessment = critic.score(objective,reformatted_task_lists)
+        assessment = critic.score(objective,reformatted_task_lists,mode=mode)
         top_score_task = assessment['Critic_Scores'].index(max(assessment['Critic_Scores']))
         selected_tasklist = candidate_task_lists[top_score_task]
         return selected_tasklist
 
         
 
-    def start(self, objective, examples):
+    def start(self, objective, examples, mode="empirical"):
         auditor = Auditor(self.openai_api_key)
         candidate_task_lists = []
         while len(candidate_task_lists)<3:
@@ -42,5 +42,5 @@ class Metronome:
             if report['verdict']=='Pass':
                 candidate_task_lists.append(temp_task_list)
         
-        return self.setTempo(objective=objective, candidate_task_lists=candidate_task_lists)
+        return self.setTempo(objective=objective, candidate_task_lists=candidate_task_lists, mode=mode)
 
