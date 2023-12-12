@@ -1,0 +1,10 @@
+Objective1: Look up AI news from today (May 27, 2023) and write a poem.
+Objective2: Find me the top questions asked for Sales and Marketing on Quora today and draft impactful responses for each of those questions that you found.
+Objective3: Find me the CRO's or VP of Sales Names and LinkedIn Profiles for people in the following companies : Salesforce Microsoft Intuit Veeva Systems Oracle Cvent Druva Box Google Workspace Zendesk
+Objective4: What are the trending topics in Software as a Service on social media?
+Objective5: What are the top pain points mentioned by sales Managers on social media?
+Objective6: Find me the names top 50 companies in Software as a Service industry in companies with >500 employees in United States
+Objective7: Find me a list of top 10 mining companies in : Mining, Oil & Gas, Logistics (Freight, Shipping, etc), Manufacturing
+Objective8: Give me all the details about Saumya Bhatnagar at involve.ai
+Objective9: Find me the names and details of 2 VP of Sales who work at companies that belong to the Software as a Service industry
+Objective10: I want to research John Deere
