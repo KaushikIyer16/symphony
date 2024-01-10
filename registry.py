@@ -1,7 +1,7 @@
 from chaos.search import SearchAgent
 
 config = {
-  "openai_api_key": "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",
+  "openai_api_key": "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",
   "google_api_key": "AIzaSyDcLZdN5Z_BUK9mOj-fuj4WWAbqYGgquz0",
   "google_cse_id": "b76747d94c23b42fe"
 }
